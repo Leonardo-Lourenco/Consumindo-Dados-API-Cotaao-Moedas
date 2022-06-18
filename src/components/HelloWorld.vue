@@ -1,82 +1,79 @@
 <template>
   
-  <table class="table ">
+  <table class="table">
 
     <thead>
 
-      <tr>
+        <tr>
 
-        <th>Cód</th>
-        <th>Nome</th>
-        <th>Máximo</th>
-        <th>Minimo</th>
-        <th>Variação</th>
-           
-        <th></th>
+              <th>Cód</th>
+              <th>Nome</th>
+              <th>Máximo</th>
+              <th>Minimo</th>
+              <th>Variação</th>
 
-      </tr>
+              <th></th>
+
+
+        </tr>
 
     </thead>
-
 
     <tbody>
 
       <tr v-for="(quote, key) in quotes" :key="key">
 
-          <td>{{ key }}</td>
-          <td> {{ quote.name }}</td>
-          <td> {{ quote.high }}</td>
-          <td> {{ quote.low }}</td>
+        <td> {{ key }}</td>
+        <td> {{quote.name }}</td>
+        <td>{{quote.high }}</td>
+        <td> {{ quote.low }}</td>
 
 
-          <td> 
+        <td>
 
-            <span 
+          <span
 
-            class="label label-rounded text-small" 
-            :class="{'label-error': quote.pctChange < 0, 'label-success': quote.pctChange > 0 }">
+           class="label label-rounded text-small" 
+          :class="{'label-error': quote.pctChange < 0, 'label-success': quote.pctChange > 0 }">              
+          
 
             {{ quote.pctChange }} %
 
-            </span>
+
+          </span>
 
 
 
-          </td>
-
-          <td>
-
-            <a href="#" class="btn btn-primary btn-sm tooltip tooltip-left" data-tooltip="Seguir">
+        </td>
 
 
-              <i class="icon icon-plus"></i>
+        
 
-            </a>
-            
-          </td>
-      
+
+
       </tr>
 
     </tbody>
-
 
 
   </table>
 
 </template>
 
-
 <script>
-   
 
-    export default {
-     
-        props: { quotes: { type: Object, required: true } },
+  export default {
 
-           
-    }
+     props: { quotes: { type: Object, required: true }},
 
 
+  }
+ 
 </script>
 
 
+<style scoped>
+
+
+
+</style>

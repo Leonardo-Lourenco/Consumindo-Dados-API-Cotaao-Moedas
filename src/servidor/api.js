@@ -1,18 +1,17 @@
-// Configurando a nossa API de cotação
+// Configraões da API
 
 import axios from 'axios'
 
-const api = axios.create ({
+const api = axios.create({
 
-    baseURL: 'https://economia.awesomeapi.com.br/json'
+    baseURL: 'https://economia.awesomeapi.com.br/json',
+    
+  });
 
-});
+  export default {
 
-export default {
-
-    all(){
+    all() {
 
         return api.get('/all')
     }
-
-}
+  }
